@@ -1,4 +1,4 @@
-# Guide and instructions for piano key transport scripts 
+# Guide and instructions 
 # Bill P. Truong 											 
 
 Important: All data may be downloaded through linked Zenodo repository. 
