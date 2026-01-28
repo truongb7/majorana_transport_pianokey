@@ -1,7 +1,9 @@
 # Guide and instructions 
 # Bill P. Truong 											 
 
-Important: All data may be downloaded through linked Zenodo repository: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18396840.svg)](https://doi.org/10.5281/zenodo.18396840)
+Important: All data may be downloaded through linked Zenodo repository: 
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18396840.svg)](https://doi.org/10.5281/zenodo.18396840)
 
 This collection consists of the following scripts for producing and managing numerical data:
 - pk_functions.py: Contains a suite of functions necessary for the numerical simulation and study of piano key transport. 
