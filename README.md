@@ -1,7 +1,7 @@
 # Guide and instructions for piano key transport scripts 
-# By: Bill Truong 											 
+# Bill P. Truong 											 
 
-The collection consists of the following scripts for producing and managing numerical data:
+This collection consists of the following scripts for producing and managing numerical data:
 - pk_functions.py: Contains a suite of functions necessary for the numerical simulation and study of piano key transport. 
 - tl_functions.py: Contains a suite of functions necessary for numerical simulations in effective two-level systems; some functions here are used in the scripts for the full piano key simulation/data management.
 - pk_simulation.py: Contains a single function that numerically simulates piano key transport. Primarily calculates the time evolution operator and uses it to calculate quantities such as the diabatic error. 
@@ -35,13 +35,15 @@ Instructions for use:
 	4. Specify "Protocol parameters" such as chain lengths, values of couplings (all in meV), protocol times, disorder and noise strengths, etc. 
 	5. Specify "Directories and file names" where data will be saved. By default, all data will be saved in "data", "data_average" (for disorder/noise), and "data_mingap" (for minimum gaps) folders within the same directory, which are automatically created if they do not already exist. 
 	6. Run the script.
-	Notes on data: 
+	7. Notes on data: 
 		- Data contained in files within the "data" folder (as .csv) correspond to the most recent simulation. For example, the results of a simulation with disorder will override any previous result with the same parameter specifications. In essence, the data contained in this folder correspond to single simulations. 
 		- Data contained in files within the "data_average" folder (as .csv) are updated as new simulations are performed. For example, the results of a simulation with disorder can either a.) be added as a new data file if it does not already exist or b.) update average quantities within an existing data file. In essence, the data contained in this folder correspond to averages of multiple simulations and are continually updated as more simulations are performed with the same parameter set.
-		- Data contained in files within the "data_mingap" folder (as .npz) each contain the data itself (index by "data") and the parameter set (indexed by "params"). Results from additional simulations performed which share the same parameter set are appended to the data already contained within these files. 		
+		- Data contained in files within the "data_mingap" folder (as .npz) each contain the data itself (index by "data") and the parameter set (indexed by "params"). Results from additional simulations performed which share the same parameter set are appended to the data already contained within these files.
+		
 - Running multiple simulations:
 	1. Open param_sets/ax_params.sh. Specify all parameters -- the organization of the parameters is similar to that of py_main.py. Pay special attention to "Varying parameters," specifically "STR_VARY_ONE" and "STR_VARY_TWO." Two parameters can be specified to be varied. Arrays containing values to be varied override any single-specifications. For example, if STR_VARY_ONE=TAU, the specified array ARR_TAU will override the parameter TAU that is usually specified. 
-	2. Run ax_run.sh by running the command "ax_run.sh ax_params.sh false" in command line. See notes within ax_run.sh for further details. 
+	2. Run ax_run.sh by running the command "ax_run.sh ax_params.sh false" in command line. See notes within ax_run.sh for further details.
+
 - Combining data files:
 	- Main quantities (e.g. diabatic error)
 		1. Open pk_combiner.py. 
@@ -56,4 +58,5 @@ Instructions for use:
 Available data:
 - All records of data are contained in the "records" folder as Excel files. These records keep track of all data that is contained in the "data_main" folder for the diabatic error and the "data_mingap" folder for the minimum gap statistics. 
 - The data_mingap/managed folder, which contains raw, managed minimum gap data (before averaging) appears as a .rar archive. Accessing this data requires unpacking the contents of this archive. 
+- The plotting scripts for the diabatic error directly pull data contained in the "data_main" folder. The plotting scripts for the minimum gap statistics pull data contained in the "data_mingap" folder. 
 		
