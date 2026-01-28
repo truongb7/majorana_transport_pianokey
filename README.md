@@ -1,6 +1,8 @@
 # Guide and instructions for piano key transport scripts 
 # Bill P. Truong 											 
 
+Important: All data may be downloaded through linked Zenodo repository. 
+
 This collection consists of the following scripts for producing and managing numerical data:
 - pk_functions.py: Contains a suite of functions necessary for the numerical simulation and study of piano key transport. 
 - tl_functions.py: Contains a suite of functions necessary for numerical simulations in effective two-level systems; some functions here are used in the scripts for the full piano key simulation/data management.
